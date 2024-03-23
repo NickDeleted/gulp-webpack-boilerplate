@@ -1,90 +1,70 @@
-@mixin desktop {
-  @media screen and (max-width: $desktop) {
-      @content;
+@mixin xxl {
+  @media screen and (max-width: $bp-xxl) {
+    @content;
   }
 }
 
-@mixin laptop {
-  @media screen and (max-width: $laptop) {
-      @content;
+@mixin xl {
+  @media screen and (max-width: $bp-xl) {
+    @content;
   }
 }
 
 @mixin large {
-@media screen and (max-width: $large) {
-  @content;
-}
-}
-
-@mixin largetablet {
-@media screen and (max-width: $largetablet) {
+  @media screen and (max-width: $bp-large) {
     @content;
-}
-}
-
-@mixin htablet {
-@media screen and (max-width: $htablet) {
-    @content;
-}
-}
-
-@mixin tablet {
-  @media screen and (max-width: $tablet) {
-      @content;
   }
 }
 
-@mixin smalltablet {
-@media screen and (max-width: $smalltablet) {
+@mixin medium {
+  @media screen and (max-width: $bp-medium) {
     @content;
-}
+  }
 }
 
 @mixin small {
-@media screen and (max-width: $small) {
+  @media screen and (max-width: $bp-small) {
     @content;
-}
-}
-
-@mixin smartphone {
-  @media screen and (max-width: $smartphone) {
-      @content;
   }
 }
 
-@mixin sp420 {
-@media screen and (max-width: $sp420) {
+@mixin xs {
+  @media screen and (max-width: $bp-xs) {
     @content;
-}
+  }
 }
 
-@mixin sp360 {
-@media screen and (max-width: $sp360) {
+@mixin xxs {
+  @media screen and (max-width: $bp-xxs) {
     @content;
-}
+  }
 }
 
-@mixin smallphone {
-@media screen and (max-width: $smallphone) {
+@mixin xxxs {
+  @media screen and (max-width: $bp-xxxs) {
     @content;
+  }
 }
+
+@mixin tiny {
+  @media screen and (max-width: $bp-tiny) {
+    @content;
+  }
 }
 
 // border gradient 
 
 @mixin border-gradient($from, $to, $weight: 0) {
-$mix-main: mix($from, $to);
-$mix-sub-from: mix($mix-main, $from);
-$mix-sub-to: mix($mix-main, $to);
+  $mix-main: mix($from, $to);
+  $mix-sub-from: mix($mix-main, $from);
+  $mix-sub-to: mix($mix-main, $to);
 
-box-shadow: 0 1px 0 $weight rgba($mix-sub-to, .25),
-            0 -1px 0 $weight rgba($mix-sub-from, .25),
-            1px 0 0 $weight rgba($mix-sub-to, .25),
-            -1px 0 0 $weight  rgba($mix-sub-from, .25),
-            1px -1px 0 $weight rgba($mix-main, .5),
-            -1px 1px 0 $weight rgba($mix-main, .5),
-            1px 1px 0 $weight rgba($to, .75),
-            -1px -1px 0 $weight rgba($from, .75);
+  box-shadow: 0 1px 0 $weight rgba($mix-sub-to, .25),
+    0 -1px 0 $weight rgba($mix-sub-from, .25),
+    1px 0 0 $weight rgba($mix-sub-to, .25),
+    -1px 0 0 $weight rgba($mix-sub-from, .25),
+    1px -1px 0 $weight rgba($mix-main, .5),
+    -1px 1px 0 $weight rgba($mix-main, .5),
+    1px 1px 0 $weight rgba($to, .75),
+    -1px -1px 0 $weight rgba($from, .75);
 }
-
-
